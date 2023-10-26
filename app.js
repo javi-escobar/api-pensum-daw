@@ -10,104 +10,116 @@ app.use(express.json())
 
 const tecnicoComputacion = {
   ciclo1: {
-    ANF231: { nombre: "Antropologia", prerrequisito: "Bachillerato", UV: 3 },
+    ANF231: { nombre: "Antropologia Filosofica", prerrequisito: "Bachillerato", UV: 3 },
     PAL404: {
-      nombre: "Programacion_Algoritmos",
+      nombre: "Programacion de Algoritmos",
       prerrequisito: "Bachillerato",
       UV: 4,
     },
-    ALG501: { nombre: "Algebra", prerrequisito: "Bachillerato", UV: 4 },
+    ALG501: { nombre: "Algebra Vectorial y Matrices", prerrequisito: "Bachillerato", UV: 4 },
     LME404: {
-      nombre: "Lenguajes_Marcado",
+      nombre: "Lenguajes de Marcado y  Estilo Web",
       prerrequisito: "Bachillerato",
       UV: 4,
     },
-    REC404: { nombre: "Redes", prerrequisito: "Bachillerato", UV: 4 },
+    REC404: { nombre: "Redes de Comunicación", prerrequisito: "Bachillerato", UV: 4 },
   },
   ciclo2: {
     PSC231: {
-      nombre: "Pensamiento_Social",
+      nombre: "Pensamiento Social y Cristiano",
       prerrequisito: "Bachillerato",
       UV: 3,
     },
     POO404: {
-      nombre: "Programacion_OrientadaObjetos",
-      prerrequisito: ["Programacion_Algoritmos"],
+      nombre: "Programacion a OrientadaObjetos",
+      prerrequisito: "Programación de Algoritmos",
       UV: 4,
     },
     DAW404: {
-      nombre: "Desarrollo_AppWeb",
-      prerrequisito: ["Lenguajes_Marcado"],
+      nombre: "Desarrollo de Aplicaciones Web con Software Interpretados en el Cliente",
+      prerrequisito: "Lenguajes de Marcado y  Estilo Web",
       UV: 4,
     },
     DSP404: {
-      nombre: "Desarrollo_SoftPropietario",
-      prerrequisito: ["Programacion_Algoritmos"],
+      nombre: "Desarrollo de Aplicaciones con Software Propietario",
+      prerrequisito: "Programación de Algoritmos",
       UV: 4,
     },
     ASB404: {
-      nombre: "Analisis_BasesDatos",
-      prerrequisito: ["Programacion_Algoritmos"],
+      nombre: "Analisis y Diseño de Sistemas y Bases de Datos",
+      prerrequisito: "Programación de Algoritmos",
       UV: 4,
     },
   },
 };
 
 const ingenieriaComputacion = {
-  ciclo1: {
-    CAD501: {
-      nombre: "Calculo_Diferencial",
-      prerrequisito: "Bachillerato",
-      UV: 4,
-    },
-    QUG501: { nombre: "Quimica_General", prerrequisito: "Bachillerato", UV: 4 },
-    ANF231: { nombre: "Antropologia", prerrequisito: "Bachillerato", UV: 3 },
-    PRE104: {
-      nombre: "Programacion_Estructurada",
-      prerrequisito: "Bachillerato",
-      UV: 4,
-    },
-  },
-  ciclo2: {
-    ALG501: { nombre: "Algebra", prerrequisito: "Bachillerato", UV: 4 },
-    CAI501: {
-      nombre: "Calculo_Integral",
-      prerrequisito: "Bachillerato",
-      UV: 4,
-    },
-    MDB104: {
-      nombre: "Modelamiento_BasesDatos",
-      prerrequisito: ["Programacion_Estructurada"],
-      UV: 4,
-    },
-    POO404: {
-      nombre: "Programacion_OrientadaObjetos",
-      prerrequisito: ["Programacion_Estructurada"],
-      UV: 4,
-    },
-  },
   ciclo3: {
     CVV501: {
-      nombre: "Calculo_Variables",
-      prerrequisito: "Bachillerato",
+      nombre: "Calculo de Varias Variables",
+      prerrequisito: "Calculo Integral",
       UV: 4,
     },
     CDP501: {
-      nombre: "Cinematica_Dinamica_Particulas",
-      prerrequisito: "Bachillerato",
+      nombre: "Cinemática y Dinámica de Particulas",
+      prerrequisito: "Calculo Diferencial",
       UV: 4,
     },
     ADS104: {
-      nombre: "Analisis_SistemasInformaticos",
-      prerrequisito: ["Modelamiento_BasesDatos"],
+      nombre: "Analisis y Diseño de Sistemas Informaticos",
+      prerrequisito: "Modelamiento y Diseño de Bases de Datos",
       UV: 4,
     },
     PED104: {
-      nombre: "Programacion_Datos",
-      prerrequisito: ["Programacion_OrientadaObjetos"],
+      nombre: "Programacion con Estructuras de Datos",
+      prerrequisito: "Programacion Orientada a Objetos",
       UV: 4,
     },
   },
+  ciclo4: {
+    EDI501: {
+      nombre: "Ecunaciones Diferenciales",
+      prerrequisito: "Calculo de Varias Variables",
+      UV: 4,
+    },
+    EYM501: {
+      nombre: "Electricidad y Magnetismo",
+      prerrequisito: "Cinemática y Dinámica de Partículas",
+      UV: 4,
+    },
+    DMD104: {
+      nombre: "Datawarehouse y Mineria de Datos",
+      prerrequisito: "Modelamiento y Diseño de Base de Datos",
+      UV: 4,
+    },
+    ESA501: {
+      nombre: "Estadísitca Aplicada",
+      prerrequisito: "Cálculo Integral",
+      UV: 4,
+    }
+  },
+  ciclo5: {
+    ACE102: {
+      nombre: "Análisis de Circuitos Eléctricos",
+      prerrequisito: "Electricidad y Magnetismo",
+      UV: 4,
+    },
+    GEA106: {
+      nombre: "Gestión Ambiental",
+      prerrequisito: "Química General",
+      UV: 4,
+    },
+    AEE106: {
+      nombre: "Análisis y Evaluación Económica",
+      prerrequisito: "Estadísitca Aplicada",
+      UV: 4,
+    },
+    OFC501: {
+      nombre: "Oscilaciones, Fluidos y Calor",
+      prerrequisito: "Cinamática y Dinámica de Partículas",
+      UV: 4,
+    }
+  }
 };
 
 const inscripciones = {};
@@ -116,7 +128,7 @@ const inscripciones = {};
 
 app.get("/", (req, res) => {
   res.send(
-    "Rutas de Pensum: 'tecnicoComputacion/pensum' o '/ingenieriaComputacion/pensum' Rutas de Prerrequisitos por Materia: '/pre/tecnicoComputacion/ + codigo de Materia(DAW404, DSP404, etc.)' o '/pre/ingenieriaComputacion/ + codigo de Materia' Rutas Materias por Ciclo: '/tecnicoComputacion/ciclo (1 o 2)' o '/ingenieriaComputacion/ciclo (1, 2 o 3)'"
+    "Rutas de Pensum: 'tecnicoComputacion/pensum' o '/ingenieriaComputacion/pensum' Rutas de Prerrequisitos por Materia: '/tecnicoComputacion/ + codigo de Materia(DAW404, DSP404, etc.)' o '/ingenieriaComputacion/ + codigo de Materia' Rutas Materias por Ciclo: '/tecnicoComputacion/ciclo (1 o 2)' o '/ingenieriaComputacion/ciclo (3, 4 o 5)'"
   );
 });
 //Pensum
@@ -128,43 +140,45 @@ app.get("/ingenieriaComputacion/pensum", (req, res) => {
 });
 
 //Prerrequisitos por codigo de materia
-app.get("/pre/:carrera/:codigo", (req, res) => {
+app.get("/:carrera/pre/:codigoMateria", (req, res) => {
   const carrera = req.params.carrera;
-  const codigo = req.params.codigo;
+  const codigoMateria = req.params.codigoMateria;
 
-  var pensum = null;
-
-  if (carrera === "tecnicoComputacion") {
-    pensum = tecnicoComputacion;
-  } else if (carrera === "ingenieriaComputacion") {
-    pensum = ingenieriaComputacion;
-  } else {
-    res.status(404).json({ error: "Carrera no encontrada" });
+  if (carrera !== 'tecnicoComputacion' && carrera !== 'ingenieriaComputacion') {
+    return res.status(404).json({ error: "Carrera no encontrada" });
   }
 
-  if (pensum) {
-    var matEncontrada = null;
-    for (const ciclo in pensum) {
-      matEncontrada = pensum[ciclo][codigo];
+  const pensum = carrera === 'tecnicoComputacion' ? tecnicoComputacion : ingenieriaComputacion;
+
+  let materiaEncontrada = null;
+  let prerrequisitos = [];
+
+  for (const ciclo in pensum) {
+    if (pensum[ciclo][codigoMateria]) {
+      materiaEncontrada = pensum[ciclo][codigoMateria];
+      prerrequisitos = materiaEncontrada.prerrequisito.split(', ').filter(Boolean);
+      break;
     }
   }
 
-  if (matEncontrada) {
+  if (materiaEncontrada) {
     res.send({
       carrera,
-      codigo,
-      nombre: matEncontrada.nombre,
-      prerrequisito: matEncontrada.prerrequisito,
+      codigoMateria,
+      nombre: materiaEncontrada.nombre,
+      prerrequisitos,
     });
   } else {
     res.status(404).json({ error: "Materia no encontrada" });
   }
 });
 
+
 //Materias por ciclo
 app.get("/:carrera/:ciclo", (req, res) => {
-  const carrera = req.params.carrera;
   const ciclo = req.params.ciclo;
+  const carrera = req.params.carrera;
+
 
   var pensum = null;
   if (carrera === "tecnicoComputacion") {
